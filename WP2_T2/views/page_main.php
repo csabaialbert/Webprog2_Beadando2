@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <!--Az oldal hátterének beállítása.-->
-<html lang="hu-hu" style=" background-image: url('bg.png'); background-size: contain; background-repeat:   no-repeat; background-attachment: fixed;  background-size: 100% 100%;">
+<html lang="hu-hu">
 
 <head>
     <meta charset="utf-8">
