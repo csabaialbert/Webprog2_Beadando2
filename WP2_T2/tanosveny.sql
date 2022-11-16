@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Nov 03. 20:25
+-- Létrehozás ideje: 2022. Nov 16. 12:16
 -- Kiszolgáló verziója: 10.4.24-MariaDB
 -- PHP verzió: 8.1.4
 
@@ -20,9 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `tanosveny`
 --
-CREATE DATABASE IF NOT EXISTS `tanosveny` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `tanosveny`;
-
 
 -- --------------------------------------------------------
 
@@ -30,28 +27,31 @@ USE `tanosveny`;
 -- Tábla szerkezet ehhez a táblához `felhasznalok`
 --
 
-CREATE TABLE IF NOT EXISTS `felhasznalok` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `felhasznalok` (
+  `id` int(10) UNSIGNED NOT NULL,
   `csaladi_nev` varchar(45) NOT NULL DEFAULT '',
   `utonev` varchar(45) NOT NULL DEFAULT '',
   `bejelentkezes` varchar(12) NOT NULL DEFAULT '',
   `jelszo` varchar(40) NOT NULL DEFAULT '',
-  `jogosultsag` varchar(3) NOT NULL DEFAULT '_1_',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+  `jogosultsag` varchar(3) NOT NULL DEFAULT '_1_'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- A tábla adatainak kiíratása `felhasznalok`
 --
 
-
 INSERT INTO `felhasznalok` (`id`, `csaladi_nev`, `utonev`, `bejelentkezes`, `jelszo`, `jogosultsag`) VALUES
-(1, 'Várhegyi-Miłoś', 'Ádám', 'adamvm', '7450c30ed820db62bb93baf1ce3365d205c6fd7d', '__1'),
-(2, 'Mała', 'Dupcia', 'malamala', '2f45e7e89d5926893e25a5db94dc55a79090f2cb', '_1_'),
-(3, 'Fa', 'Szabolcs', 'fasza', '2f45e7e89d5926893e25a5db94dc55a79090f2cb', '_1_'),
-(4, 'Várhegyi-Miłoś', 'Agnieszka', 'agamilos', '2f45e7e89d5926893e25a5db94dc55a79090f2cb', '_1_'),
-(5, 'Felhasználó', 'János', 'janos', '5b7fc0b67e26763a0e2db4e69fc62b0e72a15fde', '_1_'),
-(6, 'Várhegyi', 'Balázs', 'vbali1990', '5b7fc0b67e26763a0e2db4e69fc62b0e72a15fde', '_1_');
+(1, 'Rendszer', 'Admin', 'Admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '__1'),
+(2, 'Családi_2', 'Utónév_2', 'Login2', '6cf8efacae19431476020c1e2ebd2d8acca8f5c0', '_1_'),
+(14, 'valami', 'valaki', 'sdasd', '7e240de74fb1ed08fa08d38063f6a6a91462a815', '_1_'),
+(5, 'valami', 'valaki', 'sdasd', '7e240de74fb1ed08fa08d38063f6a6a91462a815', '_1_'),
+(6, 'Családi_6', 'Utónév_6', 'Login6', '7ca01f28594b1a06239b1d96fc716477d198470b', '_1_'),
+(7, 'Családi_7', 'Utónév_7', 'Login7', '41ad7e5406d8f1af2deef2ade4753009976328f8', '_1_'),
+(8, 'Családi_8', 'Utónév_8', 'Login8', '3a340fe3599746234ef89591e372d4dd8b590053', '_1_'),
+(9, 'Családi_9', 'Utónév_9', 'Login9', 'c0298f7d314ecbc5651da5679a0a240833a88238', '_1_'),
+(10, 'Családi_10', 'Utónév_10', 'Login10', 'a477427c183664b57f977661ac3167b64823f366', '_1_'),
+(11, 'Csabai', 'Albert', 'csaalb', 'debf3f0b3c651227f4aec3d20a62e067f2458324', '__1'),
+(13, 'Nagy', 'Ferenc', 'feri', '1a64c2e42185659d8c92b9f8457e812ae2b7833f', '_1_');
 
 -- --------------------------------------------------------
 
@@ -59,32 +59,32 @@ INSERT INTO `felhasznalok` (`id`, `csaladi_nev`, `utonev`, `bejelentkezes`, `jel
 -- Tábla szerkezet ehhez a táblához `menu`
 --
 
-CREATE TABLE IF NOT EXISTS `menu` (
-   `url` varchar(30) NOT NULL,
+CREATE TABLE `menu` (
+  `url` varchar(30) NOT NULL,
   `nev` varchar(30) NOT NULL,
   `szulo` varchar(30) NOT NULL,
-  `gyermek` varchar(30) NOT NULL,
   `jogosultsag` varchar(3) NOT NULL,
-  `sorrend` tinyint(4) NOT NULL,
-  PRIMARY KEY (`url`)
+  `sorrend` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- A tábla adatainak kiíratása `menu`
 --
 
-INSERT INTO `menu` (`url`, `nev`, `szulo`, `gyermek`, `jogosultsag`, `sorrend`) VALUES
-('admin', 'Admin', '', '', '001', 80),
-('alapinfok', 'Alapinfók', 'elerhetoseg', '', '111', 40),
-('belepes', 'Belépés', '', '', '100', 60),
-('elerhetoseg', 'Elérhetőség', '', 'kiegeszitesek-alapinfok', '111', 20),
-('kiegeszitesek', 'Kiegészítések', 'elerhetoseg', '', '011', 50),
-('kilepes', 'Kilépés', '', '', '011', 70),
-('linkek', 'Linkek', '', '', '100', 30),
-('nyitolap', 'Nyitólap', '', '', '111', 10);
+INSERT INTO `menu` (`url`, `nev`, `szulo`, `jogosultsag`, `sorrend`) VALUES
+('admin', 'Admin', '', '001', 80),
+('apiteszt', 'API teszt', 'restapi', '111', 40),
+('belepes', 'Belépés', '', '100', 60),
+('grafikon', 'Grafikon', '', '011', 63),
+('kilepes', 'Kilépés', '', '011', 70),
+('linkek', 'Linkek', '', '100', 30),
+('nyitolap', 'Nyitólap', '', '111', 10),
+('oopjava', 'OOP JAVA', '', '011', 62),
+('pdfmaker', 'TCPDF', '', '011', 61),
+('restapi', 'Rest API', '', '111', 20),
+('tanosveny', 'Tanösvény', 'restapi', '011', 50);
 
 -- --------------------------------------------------------
-
 
 --
 -- Tábla szerkezet ehhez a táblához `np`
@@ -406,6 +406,18 @@ INSERT INTO `ut` (`id`, `nev`, `hossz`, `allomas`, `ido`, `vezetes`, `telepulesi
 --
 
 --
+-- A tábla indexei `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- A tábla indexei `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`url`);
+
+--
 -- A tábla indexei `np`
 --
 ALTER TABLE `np`
@@ -422,6 +434,16 @@ ALTER TABLE `telepules`
 --
 ALTER TABLE `ut`
   ADD PRIMARY KEY (`id`) USING BTREE;
+
+--
+-- A kiírt táblák AUTO_INCREMENT értéke
+--
+
+--
+-- AUTO_INCREMENT a táblához `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
