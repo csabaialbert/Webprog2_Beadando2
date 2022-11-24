@@ -1,4 +1,4 @@
-# Webprog2_Beadando2
+# Webprog2_Beadando2_Tanosvenyek
 OOP PHP, Ajax, Restful app with database and test withPostman, tcPDF - commissioned by GAMF, course: web programming 2
 
 ## Készítette: ##
