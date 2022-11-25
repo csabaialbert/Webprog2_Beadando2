@@ -75,7 +75,7 @@ $delresp="";
     <br><br>
 
     <br>
-    <input class="btn btn-outline-primary btn-lg btn-block" type="submit" name="submit" value="Submit">
+    <input class="btn btn-warning btn-lg btn-block" type="submit" name="submit" value="Submit">
 </div>
 </form>
 <?php
@@ -135,7 +135,7 @@ else
     <br><br>
 
     <br>
-    <input class="btn btn-outline-primary btn-lg btn-block" type="submit" name="submit2" value="Submit">
+    <input class="btn btn-warning btn-lg btn-block" type="submit" name="submit2" value="Submit">
 </div>
 </form>
 <?php
@@ -188,7 +188,7 @@ else{
     <br><br>
 
     <br>
-    <input class="btn btn-outline-primary btn-lg btn-block" type="submit" name="submit3" value="Submit">
+    <input class="btn btn-warning btn-lg btn-block" type="submit" name="submit3" value="Submit">
 </div>
 </form>
 <?php

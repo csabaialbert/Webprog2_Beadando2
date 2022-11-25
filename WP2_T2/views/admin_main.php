@@ -109,7 +109,7 @@ curl_close($ch);
             <label class="center" for="jog">Jogosultság: </label><br>
             <input class="center" type="text" name="jog" pattern="[_1]{3}"><br><br>
 
-            <input class="btn btn-outline-primary btn-lg btn-block" type="submit" value="Küldés">
+            <input class="btn btn-warning btn-lg btn-block" type="submit" value="Küldés">
         </form>
     </div>
 </body>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>Tanösvények</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
+    <link rel="icon" type="image/x-icon" href="../images/icon.png">
     <!--Az oldal megjelenéséhez használt scriptek meghívása.-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,10 +20,10 @@
 <body style=" overflow: auto; background-image: url('<?php echo SITE_ROOT ?>bg.jpg');">
     <header>
         <!--Fejléc hátterének beállítása és a címek.-->
-        <div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0; background-image: url('<?php echo SITE_ROOT ?>h_bg.jpg'); background-size: cover; background-repeat:   no-repeat;">
-            <h1 style="text-shadow: 2px 2px 10px #ffffff; background-color:rgba(200, 250, 150, .5);">Tanösvények.</h1>
-            <p style="text-shadow: 2px 2px 10px #ffffff; background-color:rgba(200, 250, 150, .5);">Web-programozás II - OTTHONRA KIADOTT FELADAT - 2 </p>
-            <p style="text-shadow: 2px 2px 10px #ffffff; background-color:rgba(200, 250, 150, .5);">
+        <div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0; background-image: url('<?php echo SITE_ROOT ?>/images/h_bg.jpg'); background-size: cover; background-repeat:   no-repeat;">
+            <h1 class="title" style="text-shadow: 2px 2px 10px #ffffff; background-color:rgba(200, 250, 150, .5);">Tanösvények.</h1>
+            <p class="subtitle" style="text-shadow: 2px 2px 10px #ffffff; background-color:rgba(200, 250, 150, .5);">Web-programozás II - OTTHONRA KIADOTT FELADAT - 2 </p>
+            <p class="logged-user" style="text-shadow: 2px 2px 10px #ffffff; background-color:rgba(200, 250, 150, .5);">
                 <?= ($_SESSION['userid'] != 0 && isset($_SESSION['userid'])) ?
                     "Bejelentkezett: " . $_SESSION['userlastname'] . " " . $_SESSION['userfirstname'] . " (" . $_SESSION['username'] . ")." : "" ?>
                 <?= ($_SESSION['userlevel'] == '__1') ? " (adminisztrátor)" : "" ?>
