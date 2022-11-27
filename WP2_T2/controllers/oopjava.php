@@ -1,12 +1,12 @@
 <?php
 
-class Oopjava_Controller
-{
-	public $baseName = 'oopjava';  //meghat�rozni, hogy melyik oldalon vagyunk
-	public function main(array $vars) // a router �ltal tov�bb�tott param�tereket kapja
+class Oopjava_Controller {
+	public $baseName = 'oopjava';  //meghatározni, hogy melyik oldalon vagyunk
+
+	public function main(array $vars) // a router által továbbított paramétereket kapja
 	{
-		//bet�ltj�k a n�zetet
-		$view = new View_Loader($this->baseName."_main");
+		//betöltjük a nézetet
+		$view = new View_Loader($this->baseName . "_main");
 	}
 }
 

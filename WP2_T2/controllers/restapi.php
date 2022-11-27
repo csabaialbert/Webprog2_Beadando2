@@ -1,12 +1,12 @@
 <?php
 
-class Restapi_Controller
-{
-	public $baseName = 'restapi';  //meghat�rozni, hogy melyik oldalon vagyunk
-	public function main(array $vars) // a router �ltal tov�bb�tott param�tereket kapja
+class Restapi_Controller {
+	public $baseName = 'restapi';  //meghatározni, hogy melyik oldalon vagyunk
+
+	public function main(array $vars) // a router által továbbított paramtereket kapja
 	{
-		//bet�ltj�k a n�zetet
-		$view = new View_Loader($this->baseName."_main");
+		//betöltjük a nézetet
+		$view = new View_Loader($this->baseName . "_main");
 	}
 }
 
