@@ -87,7 +87,7 @@ function isNumberInRange(value, limit) {
 }
 
 function isMinLowerThanMax(minValue, maxValue) {
-    return minValue <= maxValue;
+    return parseInt(minValue, 10) <= parseInt(maxValue, 10);
 }
 
 function isYesNoEither(value) {

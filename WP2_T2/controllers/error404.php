@@ -1,9 +1,9 @@
 <?php
 
 class Error404_Controller {
-	public $baseName = 'error404';  //meghatározni, hogy melyik oldalon vagyunk
+	public $baseName = 'error404';  //meghatÃ¡rozni, hogy melyik oldalon vagyunk
 
-	public function main(array $vars) // a router által továbbított paramétereket kapja
+	public function main(array $vars) // a router Ã¡ltal tovÃ¡bbÃ­tott paramÃ©tereket kapja
 	{
 		$view = new View_Loader($this->baseName . '_main');
 	}

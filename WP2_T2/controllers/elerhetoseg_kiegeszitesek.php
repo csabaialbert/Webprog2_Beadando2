@@ -1,11 +1,11 @@
 <?php
 
 class Elerhetoseg_kiegeszitesek_Controller {
-	public $baseName = 'elerhetoseg_kiegeszitesek';  //meghatározni, hogy melyik oldalon vagyunk
+	public $baseName = 'elerhetoseg_kiegeszitesek';  //meghatÃ¡rozni, hogy melyik oldalon vagyunk
 
-	public function main(array $vars) // a router által továbbított paramétereket kapja
+	public function main(array $vars) // a router Ã¡ltal tovÃ¡bbÃ­tott paramÃ©tereket kapja
 	{
-		//betöltjük a nézetet
+		//betÃ¶ltjÃ¼k a nÃ©zetet
 		$view = new View_Loader($this->baseName . "_main");
 	}
 }

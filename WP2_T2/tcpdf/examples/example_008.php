@@ -70,7 +70,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFontSubsetting(true);
 
 // set font
-$pdf->SetFont('freeserif', '', 12);
+$pdf->SetFont('freesans', '', 12); // freeserif
 
 // add a page
 $pdf->AddPage();

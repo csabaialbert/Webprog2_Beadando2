@@ -22,7 +22,7 @@ class Beleptet_Model {
 					$retData['uzenet'] = "Helytelen felhasználói név-jelszó pár!";
 					break;
 				case 1:
-					$retData['eredmény'] = "OK";
+					$retData['eredmeny'] = "OK";
 					$retData['uzenet'] = "Kedves " . $felhasznalo[0]['csaladi_nev'] . " " . $felhasznalo[0]['utonev'] . "!<br><br>
 					                      Jó munkát kívánunk rendszerünkkel.<br><br>
 										  Az üzemeltetők";
@@ -34,11 +34,11 @@ class Beleptet_Model {
 					Menu::setMenu();
 					break;
 				default:
-					$retData['eredmény'] = "ERROR";
+					$retData['eredmeny'] = "ERROR";
 					$retData['uzenet'] = "Több felhasználót találtunk a megadott felhasználói név -jelszó párral!";
 			}
 		} catch (PDOException $e) {
-			$retData['eredmény'] = "ERROR";
+			$retData['eredmeny'] = "ERROR";
 			$retData['uzenet'] = "Adatbázis hiba: " . $e->getMessage() . "!";
 		}
 		return $retData;
