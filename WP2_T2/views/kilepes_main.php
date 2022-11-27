@@ -1,1 +1,1 @@
-<h2><br><?= $viewData['uzenet']?><br></h2>
+<h2><br><?= $viewData['uzenet'] ?><br></h2>
