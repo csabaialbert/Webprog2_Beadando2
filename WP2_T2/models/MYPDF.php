@@ -1,6 +1,10 @@
 <?php
 
 class MYPDF extends TCPDF {
+	public function error($msg) {
+		throw new Exception($msg);
+	}
+
 	public function ColoredTable($caption, $header, $rows) {
 		// Caption font and color
 		$this->SetFont('helvetica', 'B', 16);
@@ -18,7 +22,7 @@ class MYPDF extends TCPDF {
 		$this->SetTextColor(255,255,255);
 		$this->SetDrawColor(255,0,0);
 		// Header
-		$w = array(63, 36, 36, 36, 63, 63);
+		$w = array(63, 20, 20, 20, 40, 63);
 		$num_headers = count($header);
 		for($i = 0; $i < $num_headers; ++$i) {
 			$this->Cell($w[$i], 12, $header[$i], 1, 0, 'C', 1);

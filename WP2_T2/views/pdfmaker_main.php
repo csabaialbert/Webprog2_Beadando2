@@ -34,10 +34,12 @@
             </fieldset>
         </div>
     </div>
-    <button id="sendform" class="btn btn-warning btn-lg btn-block" type="submit">Szűrés</button>
+    <button id="sendform" class="btn btn-warning btn-lg btn-block" type="submit">
+        Szűrés, és exportálás PDF fájlba
+    </button>
 </form>
 <!--    <h2>--><? //= ($viewData['uzenet'] ?? "") ?><!--</h2>-->
-<?php /*if (isset($viewData['tanosvenyek'])) { */?><!--
+<?php /*if (isset($viewData['tanosvenyek'])) { */ ?><!--
     <table>
         <thead>
         <tr>
@@ -56,7 +58,7 @@
 				echo "<td>" . $data . "</td>";
 			}
 			echo "</tr>";
-		} */?>
+		} */ ?>
         </tbody>
     </table>
---><?php /*} */?>
+--><?php /*} */ ?>

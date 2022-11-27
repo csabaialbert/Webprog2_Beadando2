@@ -1,6 +1,9 @@
 <?php
 
-require_once('tcpdf/tcpdf.php');
+error_reporting(E_ALL);
+ini_set('display_errors',"On");
+
+require_once(SERVER_ROOT.'/tcpdf/tcpdf.php');
 
 class Pdfquery_controller {
 	public string $baseName = 'pdfmaker';
@@ -13,8 +16,8 @@ class Pdfquery_controller {
 							 true, 'UTF-8', false);
 			$pdf->SetCreator(PDF_CREATOR);
 			$pdf->SetAuthor('Web-programozás II');
-			$pdf->SetTitle('IZE');
-			$pdf->SetSubject('IZE');
+			$pdf->SetTitle('Tanösvények');
+			$pdf->SetSubject('Tanösvények');
 			$pdf->SetKeywords('TCPDF, tanösvények, nemzeti park, természet, túra');
 
 			$pdf->SetHeaderData("../images/logo.png", 15,
@@ -34,12 +37,12 @@ class Pdfquery_controller {
 
 			$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-			$l = Array();
+			$l = array();
 			if (@file_exists(dirname(__FILE__) . '/lang/hun.php')) {
 				require_once(dirname(__FILE__) . '/lang/hun.php');
 				$pdf->setLanguageArray($l);
 			} else if (@file_exists('./WP2_T2/tcpdf/examples/lang/hun.php')) {
-				require_once ('./WP2_T2/tcpdf/examples/lang/hun.php');
+				require_once('./WP2_T2/tcpdf/examples/lang/hun.php');
 				$pdf->setLanguageArray($l);
 			} else {
 				$l['a_meta_charset'] = 'UTF-8';
@@ -74,7 +77,5 @@ class Pdfquery_controller {
 				$view->assign($name, $value);
 			}
 		}
-
-
 	}
 }
