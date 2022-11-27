@@ -1,4 +1,5 @@
 <?php
+
 //Osztály létrehozása, amely a bejelentkeztetést végzi.
 class Beleptet_Model {
 	public function get_data($vars): array {
