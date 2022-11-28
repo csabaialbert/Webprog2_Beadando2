@@ -1,9 +1,10 @@
 <?php
 
 error_reporting(E_ALL);
-ini_set('display_errors',"On");
+ini_set('display_errors', "On");
 
-require_once(SERVER_ROOT.'/tcpdf/tcpdf.php');
+require_once(SERVER_ROOT . 'tcpdf/tcpdf.php');
+
 
 class Pdfquery_controller {
 	public string $baseName = 'pdfmaker';
@@ -12,17 +13,16 @@ class Pdfquery_controller {
 		$pdfQueryModel = new Pdfquery_model($vars);
 		$retData = $pdfQueryModel->get_data($vars);
 		if ($retData['eredmeny'] == "OK") {
-			$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT,
-							 true, 'UTF-8', false);
+			$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 			$pdf->SetCreator(PDF_CREATOR);
 			$pdf->SetAuthor('Web-programozás II');
 			$pdf->SetTitle('Tanösvények');
 			$pdf->SetSubject('Tanösvények');
 			$pdf->SetKeywords('TCPDF, tanösvények, nemzeti park, természet, túra');
 
-			$pdf->SetHeaderData("../images/logo.png", 15,
+			$pdf->SetHeaderData(SITE_ROOT . "images/icon.png", 30,
 								"TANÖSVÉNYEK LISTÁJA",
-								"Web-programozás II\n2. projektfeladat\n" . date('Y.m.d', time()));
+								"Web-programozás II\n2. projektfeladat\n" . date('Y.m.d-G:i:s', time()));
 
 			$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 			$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
@@ -61,16 +61,17 @@ class Pdfquery_controller {
 			$caption = 'TANÖSVÉNYEK';
 
 			// column titles
-			$header = array('TANÖSVÉNY NEVE', 'HOSSZ', 'ÁLLOMÁSOK', 'TÚRAIDŐ', 'TELEPÜLÉS', 'NEMZETI PARK');
+			$header = array('TANÖSVÉNY NEVE', 'TÁV', 'ÁLLOMÁS', 'IDÖ', 'VEZETÉS', 'TELEPÜLÉS', 'NEMZETI PARK');
 
 			// data loading
 			$rows = $retData['tanosvenyek'];
+//			$rows = $pdf->LoadData('tanosveny', 'ut');
 
 			// print colored table
 			$pdf->ColoredTable($caption, $header, $rows);
 
 			// close and output PDF document
-			$pdf->Output('tanosvenyek' . date('Ymd-Gis', time()) . '.pdf', 'I');
+			$pdf->Output('tanosvenyek' . date('Ymd-Gis', time()) . '.pdf', 'D');
 		} else {
 			$view = new View_Loader($this->baseName . '_main');
 			foreach ($retData as $name => $value) {
