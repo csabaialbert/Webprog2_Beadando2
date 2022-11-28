@@ -1,8 +1,8 @@
 <?php
-define('HOST', 'localhost');
-define('DATABASE', 'tanosveny');
-define('USER', 'root');
-define('PASSWORD', '');
+const HOST = 'localhost';
+const DATABASE = 'tanosveny';
+const USER = 'root';
+const PASSWORD = '';
 switch ($_POST['op']) {
 	case 'parkok':
 		$eredmeny = array("lista" => array());
