@@ -69,10 +69,10 @@ function ut() {
                 $("#hossz").text(data.hossz);
                 $("#allomas").text(data.allomas);
                 $("#ido").text(data.ido);
-                if (data.vezetes == 0) {
+                if (data.vezetes === 0) {
                     $("#vezetes").text("Nincs");
                 }
-                if (data.vezetes != 0) {
+                if (data.vezetes !== 0) {
                     $("#vezetes").text("Van");
                 }
 
