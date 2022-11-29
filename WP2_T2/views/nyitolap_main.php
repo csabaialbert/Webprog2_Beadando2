@@ -1,5 +1,5 @@
 <div>
-    <h1>
+    <h1 class="centered-title">
         Üdvözöljük a honlapunkon!
     </h1>
     <p>

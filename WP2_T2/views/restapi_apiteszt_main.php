@@ -1,5 +1,5 @@
-<h1>API teszt</h1>
-<h1>(gorest.co.in webszolgáltatás segítségével)</h1>
+<h1 class="centered-title">API teszt</h1>
+<h6>(gorest.co.in webszolgáltatás segítségével)</h6>
 <h2>GET metódus:</h2>
 <?php
 $url = "https://gorest.co.in/public-api/users";
