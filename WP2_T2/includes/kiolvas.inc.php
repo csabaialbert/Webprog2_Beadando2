@@ -71,31 +71,4 @@ switch ($_POST['op']) {
 		}
 		echo json_encode($eredmeny);
 		break;
-	case 'fullinfo':
-		$eredmenyek = array();
-		try {
-			$dbh = new PDO('mysql:host=' . HOST . ';dbname=' . DATABASE, USER, PASSWORD,
-						   array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-			$dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
-			$stmt = $dbh->prepare(
-				"SELECT ut.nev tanosvenynev, hossz, allomas, ido, vezetes, t.nev telepulesnev, np.nev as parknev 
-FROM ut 
-    INNER JOIN telepules t on t.id = ut.telepulesid 
-    INNER JOIN np on np.id = t.npid"
-			);
-			$stmt->execute();
-			foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $item) {
-				$eredmenyek[] = array(
-					"nev" => $item['tanosvenynev'],
-					"hossz" => $item['hossz'],
-					"allomas" => $item['allomas'],
-					"ido" => $item['ido'],
-					"telepulesnev" => $item['telepulesnev'],
-					"parknev" => $item['parknev'],
-				);
-			}
-		} catch (PDOException $e) {
-		}
-		echo json_encode($eredmenyek);
-		break;
 }
