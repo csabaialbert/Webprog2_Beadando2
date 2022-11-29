@@ -1,4 +1,4 @@
-<h2>Exportálás PDF fájlba</h2>
+<h2 class="centered-title">Exportálás PDF fájlba</h2>
 <form name="tour_filter_form" onsubmit="return validateForm();" action="<?= SITE_ROOT ?>pdfquery" method="post">
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-6 col-lg-4">
@@ -38,27 +38,3 @@
         Szűrés, és exportálás PDF fájlba
     </button>
 </form>
-<!--    <h2>--><? //= ($viewData['uzenet'] ?? "") ?><!--</h2>-->
-<?php /*if (isset($viewData['tanosvenyek'])) { */ ?><!--
-    <table>
-        <thead>
-        <tr>
-            <th>Tanösvény neve</th>
-            <th>Hossz (km)</th>
-            <th>Állomások</th>
-            <th>Idő (óra)</th>
-            <th>Település</th>
-            <th>Nemzeti park</th>
-        </tr>
-        </thead>
-        <tbody>
-		<?php /*foreach ($viewData['tanosvenyek'] as $tanosveny) {
-			echo "<tr>";
-			foreach ($tanosveny as $data) {
-				echo "<td>" . $data . "</td>";
-			}
-			echo "</tr>";
-		} */ ?>
-        </tbody>
-    </table>
---><?php /*} */ ?>
