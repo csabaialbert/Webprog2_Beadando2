@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Nov 16. 12:16
--- Kiszolgáló verziója: 10.4.24-MariaDB
--- PHP verzió: 8.1.4
+-- Host: 127.0.0.1
+-- Generation Time: Nov 29, 2022 at 03:22 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `tanosveny`
+-- Database: `tanosveny`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `felhasznalok`
+-- Table structure for table `felhasznalok`
 --
 
 CREATE TABLE `felhasznalok` (
@@ -37,7 +37,7 @@ CREATE TABLE `felhasznalok` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- A tábla adatainak kiíratása `felhasznalok`
+-- Dumping data for table `felhasznalok`
 --
 
 INSERT INTO `felhasznalok` (`id`, `csaladi_nev`, `utonev`, `bejelentkezes`, `jelszo`, `jogosultsag`) VALUES
@@ -51,12 +51,13 @@ INSERT INTO `felhasznalok` (`id`, `csaladi_nev`, `utonev`, `bejelentkezes`, `jel
 (9, 'Családi_9', 'Utónév_9', 'Login9', 'c0298f7d314ecbc5651da5679a0a240833a88238', '_1_'),
 (10, 'Családi_10', 'Utónév_10', 'Login10', 'a477427c183664b57f977661ac3167b64823f366', '_1_'),
 (11, 'Csabai', 'Albert', 'csaalb', 'debf3f0b3c651227f4aec3d20a62e067f2458324', '__1'),
-(13, 'Nagy', 'Ferenc', 'feri', '1a64c2e42185659d8c92b9f8457e812ae2b7833f', '_1_');
+(13, 'Nagy', 'Ferenc', 'feri', '1a64c2e42185659d8c92b9f8457e812ae2b7833f', '_1_'),
+(15, 'Várhegyi-Miłoś', 'Ádám', 'adamvm', '5b7fc0b67e26763a0e2db4e69fc62b0e72a15fde', '__1');
 
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `menu`
+-- Table structure for table `menu`
 --
 
 CREATE TABLE `menu` (
@@ -68,26 +69,24 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- A tábla adatainak kiíratása `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`url`, `nev`, `szulo`, `jogosultsag`, `sorrend`) VALUES
-('admin', 'Admin', '', '001', 80),
-('apiteszt', 'API teszt', 'restapi', '111', 40),
-('belepes', 'Belépés', '', '100', 60),
-('grafikon', 'Grafikon', '', '011', 63),
-('kilepes', 'Kilépés', '', '011', 70),
-('linkek', 'Linkek', '', '100', 30),
+('admin', 'Admin', '', '001', 70),
+('apiteszt', 'API teszt', 'restapi', '011', 21),
+('belepes', 'Belépés', '', '100', 50),
+('grafikon', 'Grafikon', '', '111', 40),
+('kilepes', 'Kilépés', '', '011', 60),
 ('nyitolap', 'Nyitólap', '', '111', 10),
-('oopjava', 'OOP JAVA', '', '011', 62),
-('pdfmaker', 'TCPDF', '', '011', 61),
+('pdfmaker', 'TCPDF', '', '111', 30),
 ('restapi', 'Rest API', '', '111', 20),
-('tanosveny', 'Tanösvény', 'restapi', '011', 50);
+('tanosveny', 'Tanösvény', 'restapi', '011', 22);
 
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `np`
+-- Table structure for table `np`
 --
 
 CREATE TABLE `np` (
@@ -96,7 +95,7 @@ CREATE TABLE `np` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- A tábla adatainak kiíratása `np`
+-- Dumping data for table `np`
 --
 
 INSERT INTO `np` (`id`, `nev`) VALUES
@@ -114,7 +113,7 @@ INSERT INTO `np` (`id`, `nev`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `telepules`
+-- Table structure for table `telepules`
 --
 
 CREATE TABLE `telepules` (
@@ -124,7 +123,7 @@ CREATE TABLE `telepules` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- A tábla adatainak kiíratása `telepules`
+-- Dumping data for table `telepules`
 --
 
 INSERT INTO `telepules` (`id`, `nev`, `npid`) VALUES
@@ -238,7 +237,7 @@ INSERT INTO `telepules` (`id`, `nev`, `npid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `ut`
+-- Table structure for table `ut`
 --
 
 CREATE TABLE `ut` (
@@ -252,7 +251,7 @@ CREATE TABLE `ut` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- A tábla adatainak kiíratása `ut`
+-- Dumping data for table `ut`
 --
 
 INSERT INTO `ut` (`id`, `nev`, `hossz`, `allomas`, `ido`, `vezetes`, `telepulesid`) VALUES
@@ -402,48 +401,48 @@ INSERT INTO `ut` (`id`, `nev`, `hossz`, `allomas`, `ido`, `vezetes`, `telepulesi
 (144, 'Vörös-mocsár tanösvény ', '2.50', 2, '2.00', -1, 21);
 
 --
--- Indexek a kiírt táblákhoz
+-- Indexes for dumped tables
 --
 
 --
--- A tábla indexei `felhasznalok`
+-- Indexes for table `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
   ADD PRIMARY KEY (`id`);
 
 --
--- A tábla indexei `menu`
+-- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`url`);
 
 --
--- A tábla indexei `np`
+-- Indexes for table `np`
 --
 ALTER TABLE `np`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- A tábla indexei `telepules`
+-- Indexes for table `telepules`
 --
 ALTER TABLE `telepules`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- A tábla indexei `ut`
+-- Indexes for table `ut`
 --
 ALTER TABLE `ut`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- A kiírt táblák AUTO_INCREMENT értéke
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT a táblához `felhasznalok`
+-- AUTO_INCREMENT for table `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
