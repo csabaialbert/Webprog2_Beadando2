@@ -11,7 +11,7 @@
     const data = {
         labels: park_names,
         datasets: [{
-            label: 'Tanösvények száma nemzeti parkonként',
+            label: 'Tanösvények száma',
             data: park_count,
             borderWidth: 1,
             backgroundColor: '#FF6363CC',
@@ -23,7 +23,7 @@
         type: 'bar',
         data,
         options: {
-            plugins: {  // 'legend' now within object 'plugins {}'
+            plugins: {
                 legend: {
                     title: {
                         padding: 10
