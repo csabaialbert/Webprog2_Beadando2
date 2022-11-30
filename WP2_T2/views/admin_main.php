@@ -1,5 +1,5 @@
 <?php
-$url = SERVER_ROOT . "/WP2_T2/includes/rest_server.inc.php";
+$url = "http://localhost/feladat/WP2_T2/includes/rest_server.inc.php";
 $result = "";
 if (isset($_POST['id'])) {
 	// Felesleges szóközök eldobása
