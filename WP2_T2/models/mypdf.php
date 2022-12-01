@@ -1,6 +1,6 @@
 <?php
 
-class MYPDF extends TCPDF {
+class MyPdf extends TCPDF {
 	public function error($msg) {
 		throw new Exception($msg);
 	}
